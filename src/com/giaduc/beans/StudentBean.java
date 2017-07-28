@@ -5,6 +5,15 @@ public class StudentBean {
 	private String name;
 	private Double mark;
 	private String major;
+	
+	
+	public StudentBean(String name, Double mark, String major) {
+		super();
+		this.name = name;
+		this.mark = mark;
+		this.major = major;
+	}
+	
 	public String getName() {
 		return name;
 	}
