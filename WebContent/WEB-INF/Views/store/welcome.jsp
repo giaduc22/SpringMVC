@@ -15,18 +15,20 @@
 		<div class="jumbotron">
 			<div class="container">
 				<h1>giaduc</h1>
-				<p>Online shop</p>
 			</div>
 		</div>
 	</section>
 	<form:form  method="GET" action="/HelloWeb/redirect">
-		<table>
-			<tr>
-				<td>
-					<input type="submit" value="Redirect Page"/>
-				</td>
-			</tr>
-		</table>
+		<input type="submit" value="Redirect Page"/>
+	</form:form>
+	<form:form  method="GET" action="/HelloWeb/bai1page/">
+		<input type="submit" value="Bai 1"/>
+	</form:form>
+	<form:form  method="GET" action="/HelloWeb/bai2">
+		<input type="submit" value="Bai 2"/>
+	</form:form>
+	<form:form  method="GET" action="/HelloWeb/bai3">
+		<input type="submit" value="Bai 3"/>
 	</form:form>
 </body>
 </html>
