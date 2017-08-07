@@ -5,21 +5,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("main")
+@RequestMapping("index")
 public class WebController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String index() {
 		return "index";
 	}
-	
-	@RequestMapping(value = "/aboutus", method = RequestMethod.GET)
+
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String aboutus() {
-		return "aboutus";
+		return "login";
 	}
-	
-	@RequestMapping(value = "/news", method = RequestMethod.GET)
+
+	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public String news() {
-		return "news";
+		return "register";
 	}
 }

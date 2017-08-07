@@ -6,15 +6,15 @@
 
 	<!-- Default Main Template -->
 	<definition name="index" template="/WEB-INF/templates/main.jsp">
-		<put-attribute name="content" value="/WEB-INF/Views/jsp/index.jsp" />
+		<put-attribute name="content" value="/WEB-INF/Views/jsp/content.jsp" />
 	</definition>
-	
-	<definition name="aboutus" template="/WEB-INF/templates/main.jsp">
-		<put-attribute name="content" value="/WEB-INF/Views/jsp/aboutus.jsp" />
+
+	<definition name="login" template="/WEB-INF/templates/main.jsp">
+		<put-attribute name="content" value="/WEB-INF/Views/jsp/login.jsp" />
 	</definition>
-	
-	<definition name="news" template="/WEB-INF/templates/main.jsp">
-		<put-attribute name="content" value="/WEB-INF/Views/jsp/news.jsp" />
+
+	<definition name="register" template="/WEB-INF/templates/main.jsp">
+		<put-attribute name="content" value="/WEB-INF/Views/jsp/register.jsp" />
 	</definition>
 
 </tiles-definitions>

@@ -1,16 +1,31 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- //for-mobile-apps -->
+<link href="<c:url value="/resources/css/bootstrap.css"/>"
+	rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<link href="<c:url value="/resources/css/style.css"/>" rel='stylesheet'
+	type='text/css' />
+<link href="<c:url value="/resources/css/font-awesome.css" />"
+	rel="stylesheet">
+
+<title>Big Store</title>
 </head>
 <body>
-	<a href="${pageContext.request.contextPath}/main.html">Home</a>
-	<a href="${pageContext.request.contextPath}/main/aboutus.html">About</a>
-	<a href="${pageContext.request.contextPath}/main/news.html">News</a>
-	<tiles:insertAttribute name="content"></tiles:insertAttribute>
+
+	<%@ include file="/WEB-INF/Views/jsp/header.jsp"%>
+	<tiles:insertAttribute name="content" />
+	<%@ include file="/WEB-INF/Views/jsp/footer.jsp"%>
+
+
 </body>
 </html>

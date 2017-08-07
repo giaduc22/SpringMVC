@@ -15,17 +15,7 @@
 
 	<!-- Spring MVC Annotation -->
 	<context:annotation-config />
-	<mvc:annotation-driven />
-
 	<context:component-scan base-package="com.giaduc.controller" />
-
-
-<!-- 	<bean
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/Views/" />
-		<property name="suffix" value=".jsp" />
-	</bean> -->
-
 
 	<!-- Tiles config -->
 	<bean id="tilesViewResolver"
@@ -33,14 +23,7 @@
 		<property name="viewClass"
 			value="org.springframework.web.servlet.view.tiles3.TilesView" />
 	</bean>
-<!-- 	<bean id="tilesConfigurer"
-		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
-		<property name="definitions">
-			<list>
-				<value>/WEB-INF/tiles/tiles-definitions.xml</value>
-			</list>
-		</property>
-	</bean> -->
+
 	<bean id="tilesConfigurer"
 		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
 		<property name="definitions">
@@ -49,6 +32,8 @@
 			</list>
 		</property>
 	</bean>
-
+	
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+	<mvc:annotation-driven/>
 
 </beans>
