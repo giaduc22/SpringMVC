@@ -1,28 +1,39 @@
 package com.giaduc.controller;
 
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.giaduc.beans.UserBean;
+import com.giaduc.entity.User;
 
+@Transactional
 @Controller
-@RequestMapping("/home/")
+@RequestMapping("/user/")
 public class UserController {
 
 	@Autowired
-	UserBean userBean;
-	
+	SessionFactory factory;
+
 	@RequestMapping("index")
-	public String index(ModelMap modelMap) {
-		return "home/index";
+	public String index(ModelMap model) {
+		Session session = factory.getCurrentSession();
+		String hql = "FROM User";
+		Query query = session.createQuery(hql);
+		List<User> list = query.list();
+		model.addAttribute("users", list);
+		return "user/index";
 	}
-	
-	@ModelAttribute("userBean")
-	public UserBean getUser(){
-		return userBean;
+
+	@RequestMapping("index2")
+	public String index2() {
+		return "user/index2";
 	}
-	
+
 }
